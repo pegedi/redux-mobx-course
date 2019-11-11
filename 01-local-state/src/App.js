@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 
 export class App extends Component {
-    constructor (props) {
-        super(props);
-    }
+
     render () {
         return (
             <>
@@ -35,8 +33,11 @@ class Counter extends Component {
     }
 
     render () {
+        
         return (
+            
             <div>
+                <h1>With Local State</h1>
                 <p>{this.state.counter}</p>
                 <button type="button" onClick = {this.onIncrement}>Increment</button>
                 <button type="button" onClick = {this.onDecrement}>Decrement</button>
@@ -62,11 +63,14 @@ class CounterContainer extends Component {
     }
     render () {
         return (
-            <CounterPresenter
-                counter = {this.state.counter}
-                onIncrement = {this.onIncrement}
-                onDecrement = {this.onDecrement}
-            />
+            <>
+                <h1>WIth Stateless function</h1>
+                <CounterPresenter
+                    counter = {this.state.counter}
+                    onIncrement = {this.onIncrement}
+                    onDecrement = {this.onDecrement}
+                />
+            </>
         );
     }
 }
