@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {SearchWithRef, Search} from './02-Form-State';
 
 export class App extends Component {
 
@@ -8,6 +9,15 @@ export class App extends Component {
                 <Counter />
                 <hr/>
                 <CounterContainer />
+                <hr/>
+                <SearchWithRef
+                    onSearch = {query => alert(query)}
+                />
+                <hr/>
+                <Search
+                    onSearch = {query => alert(query)}
+                />
+
             </>
 
         );
@@ -33,9 +43,9 @@ class Counter extends Component {
     }
 
     render () {
-        
+
         return (
-            
+
             <div>
                 <h1>With Local State</h1>
                 <p>{this.state.counter}</p>
@@ -64,7 +74,7 @@ class CounterContainer extends Component {
     render () {
         return (
             <>
-                <h1>WIth Stateless function</h1>
+                <h1>With Stateless function</h1>
                 <CounterPresenter
                     counter = {this.state.counter}
                     onIncrement = {this.onIncrement}
