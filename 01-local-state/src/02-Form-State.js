@@ -56,6 +56,7 @@ export class Search extends React.Component {
                 <input
                     onChange = {this.onChange}
                     type = 'text'
+                    value = {this.state.query}
                 />
                 <button
                     type = 'submit'

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {SearchWithRef, Search} from './02-Form-State';
+import {SearchableListLiftUp} from './03-Lifting-The-State.js';
 
 export class App extends Component {
 
@@ -17,6 +18,8 @@ export class App extends Component {
                 <Search
                     onSearch = {query => alert(query)}
                 />
+                <hr/>
+                <SearchableListLiftUp list={[{id:1, name:"valaki"},{id:2, name:"valami"}]} />
 
             </>
 
