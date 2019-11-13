@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {SearchWithRef, Search} from './02-Form-State';
-import {SearchableListLiftUp} from './03-Lifting-The-State.js';
+import {SearchableListLiftUp, SearchableListLiftDown} from './03-Lifting-The-State.js';
 
 export class App extends Component {
 
@@ -19,8 +19,21 @@ export class App extends Component {
                     onSearch = {query => alert(query)}
                 />
                 <hr/>
-                <SearchableListLiftUp list={[{id:1, name:"valaki"},{id:2, name:"valami"}]} />
-
+                <SearchableListLiftUp list={[
+                    {id:1, name:"something"},
+                    {id:2, name:"somebody"},
+                    {id:3, name:"somewhere"},
+                    {id:4, name:"sometimes"},
+                    {id:5, name:"somewhat"},
+                    {id:6, name:"somersby"}]} />
+                <hr/>
+                <SearchableListLiftDown list={[
+                    {id:1, name:"something"},
+                    {id:2, name:"somebody"},
+                    {id:3, name:"somewhere"},
+                    {id:4, name:"sometimes"},
+                    {id:5, name:"somewhat"},
+                    {id:6, name:"somersby"}]} />
             </>
 
         );
