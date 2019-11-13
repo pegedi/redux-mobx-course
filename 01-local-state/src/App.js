@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {SearchWithRef, Search} from './02-Form-State';
 import {SearchableListLiftUp, SearchableListLiftDown} from './03-Lifting-The-State.js';
+import {CounterContainerWithFunctional} from './04-Functional-state';
 
 export class App extends Component {
 
@@ -34,6 +35,9 @@ export class App extends Component {
                     {id:4, name:"sometimes"},
                     {id:5, name:"somewhat"},
                     {id:6, name:"somersby"}]} />
+                <hr/>
+                <CounterContainerWithFunctional />
+
             </>
 
         );
