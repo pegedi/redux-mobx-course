@@ -3,6 +3,8 @@ import {SearchWithRef, Search} from './02-Form-State';
 import {SearchableListLiftUp, SearchableListLiftDown} from './03-Lifting-The-State.js';
 import {CounterContainerWithFunctional} from './04-Functional-state';
 import {AppWithHOC} from './05-High-Order-Components';
+import {AClass} from './06-Context-for-Provider-and-Consumer'
+import './App.css'
 
 export class App extends Component {
    
@@ -34,7 +36,8 @@ export class App extends Component {
                 <CounterContainerWithFunctional />
                 <hr/>
                 <AppWithHOC list = {someList} />
-
+                <hr/>
+                <AClass />
             </>
 
         );
