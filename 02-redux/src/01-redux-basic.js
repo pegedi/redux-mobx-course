@@ -24,17 +24,24 @@ function applyToggleTodo(state, action){
             : todo);
 }
 
+function doAddTodo (id, name){
+    return {
+        type: TODO_ADD, 
+        todo: {id: id, name: name}
+    }
+}
+
+function doToggleTodo(id){
+    return {type: TODO_TOGGLE,
+            todo: { id: id }}
+}
 export function proba() {
     const store = createStore(reducer, []);
     const unsubscribe = store.subscribe(() => console.log(store.getState()));
-    store.dispatch({
-        type: TODO_ADD, 
-        todo: {id: '0', name: 'learn redux'}
-    });
-    store.dispatch({
-        type: TODO_TOGGLE,
-        todo: {id: '0'}
-    });
+    store.dispatch(doAddTodo('0', 'learn redux'));
+    store.dispatch(doAddTodo('1', 'learn mobx'));
+
+    store.dispatch(doToggleTodo('0'));
 
     
 
