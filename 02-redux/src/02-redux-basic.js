@@ -16,6 +16,19 @@ function todoReducer (state=[], action){
         default : return state;
     }
 }
+//nested state Object!!!
+function applyAddTodo(state, action){
+    const todo = Object.assign({}, action.todo, {completed: false});
+    const todos = state.todos.concat(todo);
+    return Object.assign({}, state, {todos });
+}
+function applyToggleTodo(state, action) {
+    const todos = state.todos.map(todo => todo.id === action.todo.id ?
+                                            Object.assign({}, todo, {completed: !todo.completed}) :
+                                            todo);
+    return Object.assign({}, state, {todos});
+}
+
 function filterReducer(state='SHAW ALL', action) {
     switch (action.type) {
         case FILTER_SET: {
@@ -25,4 +38,9 @@ function filterReducer(state='SHAW ALL', action) {
             return state;
         }
     }
+}
+
+export function reduxBasic02(){
+
+    const store = createStore(reducer, []);
 }
